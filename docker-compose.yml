@@ -1,0 +1,19 @@
+version: "3.3"
+services:
+  swapi:
+    image: swapi-img
+    build:
+      context: ./swapi-docker
+      dockerfile: Dockerfile
+    volumes:
+      - ./swapi-docker:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - "8080:80"
+    networks:
+      swnetwork:
+        aliases:
+          - sw.api.local
+networks:
+  swnetwork:
+
