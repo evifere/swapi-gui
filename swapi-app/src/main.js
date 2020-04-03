@@ -4,6 +4,7 @@ import './plugins/axios'
 import App from './App.vue'
 import PeopleList from './components/PeopleList.vue'
 import FilmList from './components/FilmList.vue'
+import PlanetList from './components/PlanetList.vue'
 
 import vuetify from './plugins/vuetify';
 import 'roboto-fontface/css/roboto/roboto-fontface.css'
@@ -28,7 +29,8 @@ const routes = [
   { path: '/foo', component: Foo },
   { path: '/bar', component: Bar },
   { path: '/people', component: PeopleList },
-  { path: '/film', component: FilmList }
+  { path: '/films', component: FilmList },
+  { path: '/planets', component: PlanetList }
 
 ]
 

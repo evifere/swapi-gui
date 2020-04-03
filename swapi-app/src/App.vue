@@ -17,9 +17,9 @@
     <v-content>
       <p>
         <router-link to="/foo">Go to Foo</router-link>|
-        <router-link to="/bar">Go to Bar</router-link>|
+        <router-link to="/planets">Go to Planets</router-link>|
         <router-link to="/people">Go to People</router-link>|
-        <router-link to="/film">Go to Film</router-link>
+        <router-link to="/films">Go to Films</router-link>
       </p>
       <router-view></router-view>
     </v-content>
