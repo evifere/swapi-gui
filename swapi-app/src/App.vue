@@ -37,21 +37,32 @@
       </v-btn>
     </v-app-bar>
 
+  
     <v-content>
-      <HelloWorld/>
+   <p>
+    <!-- use router-link component for navigation. -->
+    <!-- specify the link by passing the `to` prop. -->
+    <!-- <router-link> will be rendered as an `<a>` tag by default -->
+    <router-link to="/foo">Go to Foo</router-link>|
+    <router-link to="/bar">Go to Bar</router-link>|
+    <router-link to="/people">Go to People</router-link>|
+    
+  </p>
+
+       <router-view ></router-view>
     </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+//import HelloWorld from './components/HelloWorld';
 
 export default {
   name: 'App',
 
-  components: {
+  /*components: {
     HelloWorld,
-  },
+  },*/
 
   data: () => ({
     //
