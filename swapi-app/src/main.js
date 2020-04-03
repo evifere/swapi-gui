@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import './plugins/axios'
 import App from './App.vue'
 import PeopleList from './components/PeopleList.vue'
+import FilmList from './components/FilmList.vue'
+
 import vuetify from './plugins/vuetify';
 import 'roboto-fontface/css/roboto/roboto-fontface.css'
 import '@mdi/font/css/materialdesignicons.css'
@@ -25,7 +27,9 @@ const Bar = { template: '<div>bar</div>' }
 const routes = [
   { path: '/foo', component: Foo },
   { path: '/bar', component: Bar },
-  { path: '/people', component: PeopleList }
+  { path: '/people', component: PeopleList },
+  { path: '/film', component: FilmList }
+
 ]
 
 // 3. Create the router instance and pass the `routes` option

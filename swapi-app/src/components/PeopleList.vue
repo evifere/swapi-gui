@@ -21,7 +21,7 @@ export default {
   data: () => ({
     headers: [
       {
-        text: "Dessert (100g serving)",
+        text: "Name",
         align: "start",
         sortable: false,
         value: "name"
