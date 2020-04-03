@@ -1,10 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
+    <v-app-bar app color="primary" dark>
       <div class="d-flex align-center">
         <v-img
           alt="Vuetify Logo"
@@ -27,29 +23,24 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
+      <v-btn href="https://github.com/vuetifyjs/vuetify/releases/latest" target="_blank" text>
         <span class="mr-2">Latest Release</span>
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
     </v-app-bar>
 
-  
     <v-content>
-   <p>
-    <!-- use router-link component for navigation. -->
-    <!-- specify the link by passing the `to` prop. -->
-    <!-- <router-link> will be rendered as an `<a>` tag by default -->
-    <router-link to="/foo">Go to Foo</router-link>|
-    <router-link to="/bar">Go to Bar</router-link>|
-    <router-link to="/people">Go to People</router-link>|
-    
-  </p>
+      <p>
+        <!-- use router-link component for navigation. -->
+        <!-- specify the link by passing the `to` prop. -->
+        <!-- <router-link> will be rendered as an `<a>` tag by default -->
+        <router-link to="/foo">Go to Foo</router-link>|
+        <router-link to="/bar">Go to Bar</router-link>|
+        <router-link to="/people">Go to People</router-link>
+|
+      </p>
 
-       <router-view ></router-view>
+      <router-view></router-view>
     </v-content>
   </v-app>
 </template>
@@ -58,7 +49,7 @@
 //import HelloWorld from './components/HelloWorld';
 
 export default {
-  name: 'App',
+  name: "App",
 
   /*components: {
     HelloWorld,
@@ -66,6 +57,6 @@ export default {
 
   data: () => ({
     //
-  }),
+  })
 };
 </script>
