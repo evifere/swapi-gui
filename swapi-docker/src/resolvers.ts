@@ -10,20 +10,29 @@ import { Species } from "./types/Species";
 @Resolver()
 export class PersonResolver {
   @Query(returns => [Person])
-  public people() {
-    return people;
+  public people(
+    @Arg("skip")
+    skip: number = 10,
+    @Arg("first")
+    first: number = 1,
+    @Arg("filter", { nullable: true })
+    filter?: String
+  ) {
+    console.log('endpoint people', people.length, skip, first, (first + skip));
+    return people.slice(first, (first + skip));
   }
 
-  @Query(returns => Person, {nullable: true})
+  @Query(returns => Person, { nullable: true })
   public person(
     @Arg("name")
     name: string
   ) {
+    console.log('endpoint person p name ', name);
     return people.find(p => p.name === name);
   }
 }
 
-@Resolver() 
+@Resolver()
 export class PlanetResolver {
   @Query(returns => [Planet])
   public planets() {
@@ -31,7 +40,7 @@ export class PlanetResolver {
   }
 }
 
-@Resolver() 
+@Resolver()
 export class FilmResolver {
   @Query(returns => [Film])
   public films() {
@@ -39,7 +48,7 @@ export class FilmResolver {
   }
 }
 
-@Resolver() 
+@Resolver()
 export class VehiclesResolver {
   @Query(returns => [Vehicle])
   public vehicles() {
@@ -47,7 +56,7 @@ export class VehiclesResolver {
   }
 }
 
-@Resolver() 
+@Resolver()
 export class StarshipsResolver {
   @Query(returns => [Starship])
   public starships() {
@@ -55,7 +64,7 @@ export class StarshipsResolver {
   }
 }
 
-@Resolver() 
+@Resolver()
 export class SpeciesResolver {
   @Query(returns => [Species])
   public species() {
