@@ -38,6 +38,15 @@ export class PlanetResolver {
   public planets() {
     return planets;
   }
+
+  @Query(returns => Planet, { nullable: true })
+  public planet(
+    @Arg("name")
+    name: string
+  ) {
+    console.log('endpoint planet p name ', name);
+    return planets.find(p => p.name === name);
+  }
 }
 
 @Resolver()

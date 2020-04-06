@@ -6,6 +6,7 @@ import PeopleList from './components/PeopleList.vue'
 import PeopleDetail from './components/PeopleDetail.vue'
 import FilmList from './components/FilmList.vue'
 import PlanetList from './components/PlanetList.vue'
+import PlanetDetail from './components/PlanetDetail.vue'
 import SpeciesList from './components/SpeciesList.vue'
 import StarshipList from './components/StarshipList.vue'
 import VehicleList from './components/VehicleList.vue'
@@ -36,9 +37,9 @@ const routes = [
   { path: '/people/:name', component: PeopleDetail },
   { path: '/films', component: FilmList },
   { path: '/planets', component: PlanetList },
+  { path: '/planets/:name', component:   PlanetDetail},
   { path: '/starships', component: StarshipList },
   { path: '/vehicles', component: VehicleList },
-
 ]
 
 // 3. Create the router instance and pass the `routes` option
