@@ -7,6 +7,8 @@ import FilmList from './components/FilmList.vue'
 import PlanetList from './components/PlanetList.vue'
 import SpeciesList from './components/SpeciesList.vue'
 import StarshipList from './components/StarshipList.vue'
+import VehicleList from './components/VehicleList.vue'
+
 
 import vuetify from './plugins/vuetify';
 import 'roboto-fontface/css/roboto/roboto-fontface.css'
@@ -33,6 +35,7 @@ const routes = [
   { path: '/films', component: FilmList },
   { path: '/planets', component: PlanetList },
   { path: '/starships', component: StarshipList },
+  { path: '/vehicles', component: VehicleList },
 
 ]
 
