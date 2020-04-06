@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import './plugins/axios'
 import App from './App.vue'
 import PeopleList from './components/PeopleList.vue'
+import PeopleDetail from './components/PeopleDetail.vue'
 import FilmList from './components/FilmList.vue'
 import PlanetList from './components/PlanetList.vue'
 import SpeciesList from './components/SpeciesList.vue'
@@ -32,6 +33,7 @@ Vue.use(VueRouter)
 const routes = [
   { path: '/species', component: SpeciesList },
   { path: '/people', component: PeopleList },
+  { path: '/people/:name', component: PeopleDetail },
   { path: '/films', component: FilmList },
   { path: '/planets', component: PlanetList },
   { path: '/starships', component: StarshipList },

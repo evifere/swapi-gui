@@ -21,6 +21,7 @@
         <router-link to="/species">Go to Species</router-link>|
         <router-link to="/planets">Go to Planets</router-link>|
         <router-link to="/people">Go to People</router-link>|
+        <router-link to="/people/C-3PO">Go to People C-3PO</router-link>|
         <router-link to="/films">Go to Films</router-link>
       </p>
       <router-view></router-view>
