@@ -55,6 +55,16 @@ export class FilmResolver {
   public films() {
     return films;
   }
+
+  @Query(returns => Film, { nullable: true })
+  public film(
+    @Arg("episode_id")
+    episode_id: number
+  ) {
+    console.log('endpoint film f episode_id ', episode_id);
+    return films.find(f => f.episode_id === episode_id);
+  }
+
 }
 
 @Resolver()

@@ -5,6 +5,7 @@ import App from './App.vue'
 import PeopleList from './components/PeopleList.vue'
 import PeopleDetail from './components/PeopleDetail.vue'
 import FilmList from './components/FilmList.vue'
+import FilmDetail from './components/FilmDetail.vue'
 import PlanetList from './components/PlanetList.vue'
 import PlanetDetail from './components/PlanetDetail.vue'
 import SpeciesList from './components/SpeciesList.vue'
@@ -36,6 +37,7 @@ const routes = [
   { path: '/people', component: PeopleList },
   { path: '/people/:name', component: PeopleDetail },
   { path: '/films', component: FilmList },
+  { path: '/films/:episode_id', component: FilmDetail },
   { path: '/planets', component: PlanetList },
   { path: '/planets/:name', component:   PlanetDetail},
   { path: '/starships', component: StarshipList },
