@@ -16,6 +16,7 @@
 
     <v-content>
       <p>
+        <router-link to="/starships">Go to Starships</router-link>|
         <router-link to="/species">Go to Species</router-link>|
         <router-link to="/planets">Go to Planets</router-link>|
         <router-link to="/people">Go to People</router-link>|

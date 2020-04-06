@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: "PlanetList",
+  name: "SpeciesList",
 
   data: () => ({
     headers: [

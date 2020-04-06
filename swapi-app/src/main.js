@@ -6,6 +6,7 @@ import PeopleList from './components/PeopleList.vue'
 import FilmList from './components/FilmList.vue'
 import PlanetList from './components/PlanetList.vue'
 import SpeciesList from './components/SpeciesList.vue'
+import StarshipList from './components/StarshipList.vue'
 
 import vuetify from './plugins/vuetify';
 import 'roboto-fontface/css/roboto/roboto-fontface.css'
@@ -30,7 +31,9 @@ const routes = [
   { path: '/species', component: SpeciesList },
   { path: '/people', component: PeopleList },
   { path: '/films', component: FilmList },
-  { path: '/planets', component: PlanetList }
+  { path: '/planets', component: PlanetList },
+  { path: '/starships', component: StarshipList },
+
 ]
 
 // 3. Create the router instance and pass the `routes` option
