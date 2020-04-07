@@ -6,8 +6,8 @@ swapi gui vuejs vuex
 ![Démo desktop](https://evifere.github.io/swapi-gui/desktop_demo.gif)
 
 
-# gif démo desktop
-![Démo desktop](https://evifere.github.io/swapi-gui/mobile_demo.gif)
+# gif démo mobile
+![Démo mobile](https://evifere.github.io/swapi-gui/mobile_demo.gif)
 
 
 # first installation
