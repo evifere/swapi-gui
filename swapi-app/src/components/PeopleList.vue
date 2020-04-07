@@ -1,12 +1,9 @@
 <template>
   <v-container>
     <v-row class="text-center">
-      <v-col cols="12">
-        <v-img :src="require('../assets/logo.svg')" class="my-3" contain height="200" />
-      </v-col>
 
       <v-col class="mb-4">
-        <h1 class="display-2 font-weight-bold mb-3">Welcome to swapi app</h1>
+        <h1 class="display-2 font-weight-bold mb-3">People</h1>
 
         <v-data-table :headers="headers" :items="peoples" :items-per-page="5" class="elevation-1"></v-data-table>
       </v-col>
