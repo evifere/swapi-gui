@@ -4,7 +4,14 @@
       <v-col class="mb-4">
         <h1 class="display-2 font-weight-bold mb-3">Starships</h1>
 
-        <v-data-table :headers="headers" :items="starships" :items-per-page="5" class="elevation-1"></v-data-table>
+        <v-data-table :headers="headers" :items="starships" :items-per-page="5" class="elevation-1">
+          <template v-slot:item.name="{ item }">
+            <v-btn :to="'/starships/'+item.name" icon>
+              <v-icon>mdi-eye</v-icon>
+            </v-btn>
+            {{ item.name }}
+          </template>
+        </v-data-table>
       </v-col>
     </v-row>
   </v-container>
@@ -28,7 +35,7 @@ export default {
       { text: "Cost In credits", value: "cost_in_credits" },
       { text: "Length", value: "length" },
       { text: "Max atmosphering speed", value: "max_atmosphering_speed" },
-      { text: "Crew", value: "crew" }      
+      { text: "Crew", value: "crew" }
     ],
     starships: []
   }),

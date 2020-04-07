@@ -4,7 +4,14 @@
       <v-col class="mb-4">
         <h1 class="display-2 font-weight-bold mb-3">Planets</h1>
 
-        <v-data-table :headers="headers" :items="planets" :items-per-page="5" class="elevation-1"></v-data-table>
+        <v-data-table :headers="headers" :items="planets" :items-per-page="5" class="elevation-1">
+          <template v-slot:item.name="{ item }">
+            <v-btn :to="'/planets/'+item.name" icon>
+              <v-icon>mdi-eye</v-icon>
+            </v-btn>
+            {{ item.name }}
+          </template>
+        </v-data-table>
       </v-col>
     </v-row>
   </v-container>
