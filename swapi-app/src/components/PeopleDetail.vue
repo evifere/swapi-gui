@@ -25,7 +25,7 @@
               <v-list-item-subtitle>Birth year : {{ person.birth_year}}</v-list-item-subtitle>
             </v-list-item-content>
 
-            <v-list-item-avatar tile size="80" color="grey">
+            <v-list-item-avatar tile size="80" >
               <v-img :src="require('../assets/logo.svg')" class="my-3" contain height="200" />
             </v-list-item-avatar>
           </v-list-item>

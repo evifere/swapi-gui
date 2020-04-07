@@ -73,6 +73,14 @@ export class VehiclesResolver {
   public vehicles() {
     return vehicles;
   }
+  @Query(returns => Vehicle, { nullable: true })
+  public vehicle(
+    @Arg("name")
+    name?: string
+  ) {
+    console.log('endpoint vehicle v name ', name);
+    return vehicles.find(v => v.name === name);
+  }
 }
 
 @Resolver()

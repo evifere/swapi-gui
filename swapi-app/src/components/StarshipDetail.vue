@@ -21,7 +21,6 @@
               <v-list-item-subtitle>Crew : {{ starship.crew}}</v-list-item-subtitle>
               <v-list-item-subtitle>Cargo capacity : {{ starship.cargo_capacity}}</v-list-item-subtitle>
               <v-list-item-subtitle>Consumables : {{ starship.consumables}}</v-list-item-subtitle>
-              <v-list-item-subtitle>Cargo capacity : {{ starship.cargo_capacity}}</v-list-item-subtitle>
               <v-list-item-subtitle>Hyperdrive rating: {{ starship.hyperdrive_rating}}</v-list-item-subtitle>
               <v-list-item-subtitle class="mb-2">Megalight : {{ starship.MGLT}}</v-list-item-subtitle>
 

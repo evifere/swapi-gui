@@ -13,6 +13,7 @@ import SpeciesDetail from './components/SpeciesDetail.vue'
 import StarshipList from './components/StarshipList.vue'
 import StarshipDetail from './components/StarshipDetail.vue'
 import VehicleList from './components/VehicleList.vue'
+import VehicleDetail from './components/VehicleDetail.vue'
 
 
 import vuetify from './plugins/vuetify';
@@ -46,6 +47,8 @@ const routes = [
   { path: '/starships', component: StarshipList },
   { path: '/starships/:name', component: StarshipDetail },
   { path: '/vehicles', component: VehicleList },
+  { path: '/vehicles/:name', component: VehicleDetail },
+  
 ]
 
 // 3. Create the router instance and pass the `routes` option
