@@ -14,6 +14,7 @@ import StarshipList from './components/StarshipList.vue'
 import StarshipDetail from './components/StarshipDetail.vue'
 import VehicleList from './components/VehicleList.vue'
 import VehicleDetail from './components/VehicleDetail.vue'
+import Home from './Home.vue'
 
 
 import vuetify from './plugins/vuetify';
@@ -36,6 +37,7 @@ Vue.use(VueRouter)
 // `Vue.extend()`, or just a component options object.
 // We'll talk about nested routes later.
 const routes = [
+  { path: '/', component: Home },
   { path: '/species', component: SpeciesList },
   { path: '/species/:name', component: SpeciesDetail },
   { path: '/people', component: PeopleList },
