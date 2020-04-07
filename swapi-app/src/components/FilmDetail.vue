@@ -14,11 +14,10 @@
               <v-list-item-subtitle >produced by {{ film.producer}} </v-list-item-subtitle>
               <v-list-item-subtitle class="mb-12">released {{ film.release_date}} </v-list-item-subtitle>
 
-              <v-list-item-subtitle class="mb-1">Synopsis </v-list-item-subtitle>
-              <p>{{ film.opening_crawl}}</p>
-              <hr/>              
-              <v-list-item-subtitle class="mb-1">Characters </v-list-item-subtitle>
-              <v-list-item-subtitle class="characters">
+              <v-list-item-subtitle class="mb-4">Synopsis </v-list-item-subtitle>
+              <p class="mb-2">{{ film.opening_crawl}}</p>              
+              <v-list-item-subtitle class="mb-4">Characters </v-list-item-subtitle>
+              <v-list-item-subtitle class="characters mb-2">
                 <span class="ml-2" v-for="c in film.characters" :key="c.name"><router-link :to="/people/+c.name">{{c.name }}</router-link>|</span>
               </v-list-item-subtitle>
             </v-list-item-content>
