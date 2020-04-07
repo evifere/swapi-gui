@@ -2,7 +2,7 @@
   <v-container>
     <v-row class="text-center">
       <v-col class="mb-4">
-        <h1 class="display-2 font-weight-bold mb-3">Species</h1>
+        <h1 class="display-2 font-weight-bold mb-3">Vehicles</h1>
 
         <v-data-table :headers="headers" :items="vehicles" :items-per-page="5" class="elevation-1"></v-data-table>
       </v-col>
