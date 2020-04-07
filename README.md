@@ -9,7 +9,6 @@ swapi gui vuejs vuex
 # gif démo mobile 📱
 ![Démo mobile](https://evifere.github.io/swapi-gui/mobile_demo.gif)
 
-
 # first installation
 
 
