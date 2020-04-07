@@ -16,6 +16,11 @@
 
               <v-list-item-subtitle class="mb-1">Synopsis </v-list-item-subtitle>
               <p>{{ film.opening_crawl}}</p>
+              <hr/>              
+              <v-list-item-subtitle class="mb-1">Characters </v-list-item-subtitle>
+              <v-list-item-subtitle class="characters">
+                <span class="ml-2" v-for="c in film.characters" :key="c.name"><router-link :to="/people/+c.name">{{c.name }}</router-link>|</span>
+              </v-list-item-subtitle>
             </v-list-item-content>
 
             <v-list-item-avatar tile size="80" >
@@ -24,7 +29,7 @@
           </v-list-item>
 
           <v-card-actions>
-            <v-btn to="/films" text>Back</v-btn>
+            <a href="javascript:history.go(-1)"> Go Back</a>
           </v-card-actions>
         </v-card>
       </v-col>
@@ -61,7 +66,7 @@ export default {
 };
 </script>
 <style scoped>
-.opening_crawl{
+.opening_crawl,.characters{
     min-height:12em;
 }
 </style>
