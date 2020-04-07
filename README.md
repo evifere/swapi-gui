@@ -2,7 +2,7 @@
 swapi gui vuejs vuex
 
 
-# gif démo desktop 🖥️
+# gif démo desktop 🖥️ 
 ![Démo desktop](https://evifere.github.io/swapi-gui/desktop_demo.gif)
 
 
