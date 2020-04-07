@@ -81,6 +81,14 @@ export class StarshipsResolver {
   public starships() {
     return starships;
   }
+  @Query(returns => Starship, { nullable: true })
+  public starship(
+    @Arg("name")
+    name?: string
+  ) {
+    console.log('endpoint starships s name ', name);
+    return starships.find(s => s.name === name);
+  }
 }
 
 @Resolver()

@@ -11,6 +11,7 @@ import PlanetDetail from './components/PlanetDetail.vue'
 import SpeciesList from './components/SpeciesList.vue'
 import SpeciesDetail from './components/SpeciesDetail.vue'
 import StarshipList from './components/StarshipList.vue'
+import StarshipDetail from './components/StarshipDetail.vue'
 import VehicleList from './components/VehicleList.vue'
 
 
@@ -43,6 +44,7 @@ const routes = [
   { path: '/planets', component: PlanetList },
   { path: '/planets/:name', component:   PlanetDetail},
   { path: '/starships', component: StarshipList },
+  { path: '/starships/:name', component: StarshipDetail },
   { path: '/vehicles', component: VehicleList },
 ]
 

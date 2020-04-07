@@ -18,6 +18,7 @@
       <p>
         <router-link to="/vehicles">Go to Vehicles</router-link>|
         <router-link to="/starships">Go to Starships</router-link>|
+        <router-link to="/starships/Millennium Falcon">Go to Starship Millennium Falcon</router-link>|
         <router-link to="/species">Go to Species</router-link>|
         <router-link to="/species/Trandoshan">Go to Species Trandoshan</router-link>|
         <router-link to="/planets">Go to Planets</router-link>|
