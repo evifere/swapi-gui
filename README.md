@@ -3,12 +3,10 @@ swapi gui vuejs vuex
 
 
 # gif démo desktop 🖥️
-
 ![Démo desktop](https://evifere.github.io/swapi-gui/desktop_demo.gif)
 
 
 # gif démo mobile 📱
-
 ![Démo mobile](https://evifere.github.io/swapi-gui/mobile_demo.gif)
 
 
