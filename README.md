@@ -3,11 +3,11 @@ swapi gui vuejs vuex
 
 
 # gif démo desktop 🖥️ 
-![Démo desktop](https://evifere.github.io/swapi-gui/desktop_demo.gif)
+![Démo desktop](doc/desktop_demo.gif)
 
 
 # gif démo mobile 📱
-![Démo mobile](https://evifere.github.io/swapi-gui/mobile_demo.gif)
+![Démo mobile](doc/mobile_demo.gif)
 
 # first installation
 
