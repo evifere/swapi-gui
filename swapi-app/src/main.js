@@ -9,6 +9,7 @@ import FilmDetail from './components/FilmDetail.vue'
 import PlanetList from './components/PlanetList.vue'
 import PlanetDetail from './components/PlanetDetail.vue'
 import SpeciesList from './components/SpeciesList.vue'
+import SpeciesDetail from './components/SpeciesDetail.vue'
 import StarshipList from './components/StarshipList.vue'
 import VehicleList from './components/VehicleList.vue'
 
@@ -34,6 +35,7 @@ Vue.use(VueRouter)
 // We'll talk about nested routes later.
 const routes = [
   { path: '/species', component: SpeciesList },
+  { path: '/species/:name', component: SpeciesDetail },
   { path: '/people', component: PeopleList },
   { path: '/people/:name', component: PeopleDetail },
   { path: '/films', component: FilmList },

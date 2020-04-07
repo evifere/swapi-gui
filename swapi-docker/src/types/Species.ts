@@ -37,7 +37,7 @@ export class Species {
   language: string;
 
   homeworld: string;
-  @Field(type => Planet, {nullable: true})
+  @Field(type => Planet, {name: "homeworld",nullable: true})
   resolveHomeworld() {
     if (!this.homeworld) return null;
     return planets.find(p => p.url === this.homeworld);

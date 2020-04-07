@@ -89,4 +89,13 @@ export class SpeciesResolver {
   public species() {
     return species;
   }
+
+  @Query(returns => Species, { nullable: true })
+  public specie(
+    @Arg("name")
+    name?: string
+  ) {
+    console.log('endpoint species s name ', name);
+    return species.find(s => s.name === name);
+  }
 }
