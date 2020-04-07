@@ -31,7 +31,7 @@
           </v-list-item>
 
           <v-card-actions>
-            <v-btn to="/people" text>Back</v-btn>
+            <a href="javascript:history.go(-1)"> Go Back</a>
           </v-card-actions>
         </v-card>
       </v-col>
