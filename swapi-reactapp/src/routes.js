@@ -9,6 +9,7 @@ import {
 import Home from './pages/Home';
 import About from './pages/About';
 import Dashboard from './pages/Dashboard';
+import PlanetList from './pages/PlanetList';
 
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -19,7 +20,7 @@ import Dashboard from './pages/Dashboard';
 // making sure things like the back button and bookmarks
 // work properly.
 
-export default function BasicExample() {
+export default function AppRouter() {
   return (
     <Router>
       <div>
@@ -32,6 +33,9 @@ export default function BasicExample() {
           </li>
           <li>
             <Link to="/dashboard">Dashboard</Link>
+          </li>
+          <li>
+            <Link to="/planets">Planets</Link>
           </li>
         </ul>
 
@@ -53,6 +57,9 @@ export default function BasicExample() {
           </Route>
           <Route path="/dashboard">
             <Dashboard />
+          </Route>
+          <Route path="/planets">
+            <PlanetList />
           </Route>
         </Switch>
       </div>
