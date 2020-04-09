@@ -9,10 +9,13 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import TablePagination from '@material-ui/core/TablePagination';
 
 
 const useStyles = theme => ({
-    table: {
+    root: {
+        width: '100%',
+    }, table: {
         minWidth: 650,
     },
 });
@@ -20,9 +23,37 @@ const useStyles = theme => ({
 class PlanetList extends React.Component {
 
     state = {
-        planets: []
+        planets: [],
+        page: 0,
+        rowsPerPage: 10
     }
 
+
+
+    constructor(props) {
+
+        super(props)
+        this.handleChangePage = this.handleChangePage.bind(this);
+        this.handleChangeRowsPerPage = this.handleChangeRowsPerPage.bind(this);
+
+    }
+
+    handleChangePage = (event, newPage) => {
+        this.setPage(newPage);
+    }
+
+    handleChangeRowsPerPage = (event) => {
+        this.setRowsPerPage(+event.target.value);
+        this.setPage(0);
+    }
+
+    setPage = (page) => {
+        this.setState({ page });
+    }
+
+    setRowsPerPage = (rowsPerPage) => {
+        this.setState({ rowsPerPage });
+    }
 
     componentDidMount() {
 
@@ -50,34 +81,45 @@ class PlanetList extends React.Component {
         return (
             <Container maxWidth="md">
                 <h1>Planets</h1>
-                <TableContainer component={Paper}>
-                    <Table className={classes.table} size="small" aria-label="a dense table">
-                        <TableHead>
-                            <TableRow>
-                                <TableCell>Name</TableCell>
-                                <TableCell align="right">Rotation period</TableCell>
-                                <TableCell align="right">Orbital period</TableCell>
-                                <TableCell align="right">Diameter</TableCell>
-                                <TableCell align="right">Climate</TableCell>
-                                <TableCell align="right">Terrain</TableCell>
-                            </TableRow>
-                        </TableHead>
-                        <TableBody>
-                            {rows.map((row) => (
-                                <TableRow key={row.name}>
-                                    <TableCell component="th" scope="row">
-                                        {row.name}
-                                    </TableCell>
-                                    <TableCell align="right">{row.name}</TableCell>
-                                    <TableCell align="right">{row.rotation_period}</TableCell>
-                                    <TableCell align="right">{row.orbital_period}</TableCell>
-                                    <TableCell align="right">{row.climate}</TableCell>
-                                    <TableCell align="right">{row.terrain}</TableCell>
+                <Paper className={classes.root}>
+                    <TableContainer component={Paper}>
+                        <Table className={classes.table} size="small" aria-label="a dense table">
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell>Name</TableCell>
+                                    <TableCell align="right">Rotation period</TableCell>
+                                    <TableCell align="right">Orbital period</TableCell>
+                                    <TableCell align="right">Diameter</TableCell>
+                                    <TableCell align="right">Climate</TableCell>
+                                    <TableCell align="right">Terrain</TableCell>
                                 </TableRow>
-                            ))}
-                        </TableBody>
-                    </Table>
-                </TableContainer>
+                            </TableHead>
+                            <TableBody>
+                                {rows.map((row) => (
+                                    <TableRow key={row.name}>
+                                        <TableCell component="th" scope="row">
+                                            {row.name}
+                                        </TableCell>
+                                        <TableCell align="right">{row.name}</TableCell>
+                                        <TableCell align="right">{row.rotation_period}</TableCell>
+                                        <TableCell align="right">{row.orbital_period}</TableCell>
+                                        <TableCell align="right">{row.climate}</TableCell>
+                                        <TableCell align="right">{row.terrain}</TableCell>
+                                    </TableRow>
+                                ))}
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
+                    <TablePagination
+                        rowsPerPageOptions={[10, 25, 100]}
+                        component="div"
+                        count={rows.length}
+                        rowsPerPage={this.state.rowsPerPage}
+                        page={this.state.page}
+                        onChangePage={this.handleChangePage}
+                        onChangeRowsPerPage={this.handleChangeRowsPerPage}
+                    />
+                </Paper>
             </Container>
 
         )
