@@ -77,7 +77,7 @@ class PlanetList extends React.Component {
     render() {
         const { classes } = this.props;
         const rows = this.state.planets;
-
+        const { page, rowsPerPage } = this.state;
         return (
             <Container maxWidth="md">
                 <h1>Planets</h1>
@@ -95,7 +95,7 @@ class PlanetList extends React.Component {
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                {rows.map((row) => (
+                                {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
                                     <TableRow key={row.name}>
                                         <TableCell component="th" scope="row">
                                             {row.name}
