@@ -1,14 +1,31 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Datadetail from '../components/Datadetail';
 
-export default function PlanetDetail() {
-    
-    return (
-      <div>
-        <h2>Planet Detail</h2>
-        <div>
+const headers = [ {
+    label: "Name",
+    id: "name",
+},
+{ label: "Rotation period", id: "rotation_period", align: "right" },
+{ label: "Orbital period", id: "orbital_period", align: "right" },
+{ label: "Diameter", id: "diameter", align: "right" },
+{ label: "Climate", id: "climate", align: "right" },
+{ label: "Terrain", id: "terrain", align: "right" }
+];
 
-        </div>
-      </div>
-    );
-  }
+class PlanetDetail extends React.Component {
+
+    render() {
+        const name = this.props.match.params.name;
+        console.log('this.props', this.props.match.params)
+
+        const dataQuery = '{planet( name:"' + name +'") {name population rotation_period orbital_period diameter climate terrain}}'
+        return (
+            <div>
+ 
+                <Datadetail title="Planet detail" dataKey="planet" dataQuery={dataQuery} headers={headers} />
+
+            </div>
+        );
+    }
+}
+export default PlanetDetail

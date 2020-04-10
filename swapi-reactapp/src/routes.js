@@ -68,9 +68,7 @@ export default function AppRouter() {
                     <Route exact path="/planets">
                         <PlanetList />
                     </Route>
-                    <Route exact path="/planets/:name">
-                        <PlanetDetail />
-                    </Route>
+                    <Route exact path="/planets/:name" component={PlanetDetail} />
                 </Switch>
             </main>
         </Router>
