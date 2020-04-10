@@ -19,6 +19,9 @@ export default function Home() {
                     <li>
                         <Link to="/starships">Starships</Link>
                     </li>
+                    <li>
+                        <Link to="/vehicles">Vehicles</Link>
+                    </li>
                 </ul>
         </div>
       </div>

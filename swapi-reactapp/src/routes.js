@@ -16,6 +16,7 @@ import SpeciesList from './pages/SpeciesList';
 import SpeciesDetail from './pages/SpeciesDetail';
 import StarshipList from './pages/StarshipList';
 import StarshipDetail from './pages/StarshipDetail';
+import VehicleList from './pages/VehicleList';
 import AppBar from '@material-ui/core/AppBar';
 import CameraIcon from '@material-ui/icons/PhotoCamera';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -87,6 +88,9 @@ export default function AppRouter() {
                         <StarshipList />
                     </Route>
                     <Route exact path="/starships/:name" component={StarshipDetail} />
+                    <Route exact path="/vehicles">
+                        <VehicleList />
+                    </Route>
                 </Switch>
             </main>
         </Router>
