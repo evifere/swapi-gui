@@ -23,9 +23,11 @@ const useStyles = theme => ({
 class Datatable extends React.Component {
 
     state = {
-        planets: [],
+        rows: [],
         page: 0,
-        rowsPerPage: 10
+        rowsPerPage: 10,
+        errored:false,
+        loading:false
     }
 
 
@@ -36,6 +38,7 @@ class Datatable extends React.Component {
         this.handleChangePage = this.handleChangePage.bind(this);
         this.handleChangeRowsPerPage = this.handleChangeRowsPerPage.bind(this);
 
+        console.log('props',props)
     }
 
     handleChangePage = (event, newPage) => {
@@ -56,27 +59,28 @@ class Datatable extends React.Component {
     }
 
     componentDidMount() {
+        this.setState({loading:true,errored:false});
 
         axios
             .post("http://localhost:8080/", {
-                query:
-                    "{planets {name rotation_period orbital_period diameter climate terrain}}"
+                query:this.props.dataQuery
             })
             .then(response => {
-                const planets = response.data.data.planets;
-                this.setState({ planets });
-
+                const rows = response.data.data[this.props.dataKey];
+                this.setState({ rows });
+        
             })
             .catch(error => {
                 console.log(error);
-                this.errored = true;
+                this.setState({errored:true});
+        
             })
-            .finally(() => (this.loading = false));
+            .finally(() => (this.setState({loading:false})));
     }
 
     render() {
         const { classes } = this.props;
-        const rows = this.state.planets;
+        const rows = this.state.rows;
         const { page, rowsPerPage } = this.state;
         return (
             <Container maxWidth="md">
