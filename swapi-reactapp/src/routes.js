@@ -44,22 +44,7 @@ export default function AppRouter() {
                 </Toolbar>
 
             </AppBar>
-            <div>
-                <ul>
-                    <li>
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/about">About</Link>
-                    </li>
-                    <li>
-                        <Link to="/dashboard">Dashboard</Link>
-                    </li>
-                    <li>
-                        <Link to="/planets">Planets</Link>
-                    </li>
-                </ul>
-            </div>
+ 
             <main>
                 <hr />
 
