@@ -10,6 +10,9 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import TablePagination from '@material-ui/core/TablePagination';
+import IconButton from '@material-ui/core/IconButton';
+import Visibility from '@material-ui/icons/Visibility';
+
 import { Link } from "react-router-dom";
 
 const useStyles = theme => ({
@@ -109,10 +112,13 @@ class Datatable extends React.Component {
                             <TableBody>
                                 {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
                                     <TableRow key={row.name}>
-                                        {this.props.headers.map((column) => {
+                                        {this.props.headers.map((column, i) => {
                                             const value = row[column.id];
+                                            const btnDetail = (i === 0) ? <IconButton> <Link to={"/" + this.props.dataKey + "/" + value}><Visibility /></Link></IconButton> : null;
+
                                             return (
-                                                <TableCell key={column.id} align={column.align || "center"}>
+                                                <TableCell key={column.id} align={column.align}>
+                                                    {btnDetail}
                                                     {column.format && typeof value === 'number' ? column.format(value) : value}
                                                 </TableCell>
                                             );
