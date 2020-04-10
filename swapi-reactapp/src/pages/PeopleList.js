@@ -13,7 +13,7 @@ const headers = [
 
 const dataQuery = "{people(skip:10 first:0) {name height mass hair_color skin_color birth_year gender}}";
 
-class PlanetList extends React.Component {
+class PeopleList extends React.Component {
 
 
     render() {
@@ -24,4 +24,4 @@ class PlanetList extends React.Component {
     }
 }
 
-export default PlanetList
+export default PeopleList
