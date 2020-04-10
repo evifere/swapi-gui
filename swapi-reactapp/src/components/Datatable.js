@@ -12,6 +12,7 @@ import Paper from '@material-ui/core/Paper';
 import TablePagination from '@material-ui/core/TablePagination';
 import IconButton from '@material-ui/core/IconButton';
 import Visibility from '@material-ui/icons/Visibility';
+import HomeBtn from '@material-ui/icons/Home';
 
 import { Link } from "react-router-dom";
 
@@ -91,7 +92,7 @@ class Datatable extends React.Component {
 
         return (
             <Container maxWidth="md">
-                <Link to="/">Home</Link>
+                <IconButton> <Link to="/"><HomeBtn /></Link></IconButton>
                 <h1 className={classes.title}>{this.props.title}</h1>
                 <Paper className={classes.root}>
                     <TableContainer component={Paper}>
