@@ -17,6 +17,7 @@ import StarshipDetail from './pages/StarshipDetail';
 import VehicleList from './pages/VehicleList';
 import VehicleDetail from './pages/VehicleDetail';
 import FilmList from './pages/FilmList';
+import FilmDetail from './pages/FilmDetail';
 import AppBar from '@material-ui/core/AppBar';
 import CameraIcon from '@material-ui/icons/PhotoCamera';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -89,6 +90,8 @@ export default function AppRouter() {
                     <Route exact path="/films">
                         <FilmList />
                     </Route>
+                    <Route exact path="/films/:episode_id" component={FilmDetail} />
+
                 </Switch>
             </main>
         </Router>
