@@ -12,6 +12,7 @@ import PlanetList from './pages/PlanetList';
 import PlanetDetail from './pages/PlanetDetail';
 import PeopleList from './pages/PeopleList';
 import PeopleDetail from './pages/PeopleDetail';
+import SpeciesList from './pages/SpeciesList';
 import AppBar from '@material-ui/core/AppBar';
 import CameraIcon from '@material-ui/icons/PhotoCamera';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -75,6 +76,9 @@ export default function AppRouter() {
                         <PeopleList />
                     </Route>
                     <Route exact path="/people/:name" component={PeopleDetail} />
+                    <Route exact path="/species">
+                        <SpeciesList />
+                    </Route>
                 </Switch>
             </main>
         </Router>
