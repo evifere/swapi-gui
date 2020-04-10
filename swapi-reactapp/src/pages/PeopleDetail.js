@@ -15,7 +15,6 @@ class PeopleDetail extends React.Component {
 
     render() {
         const name = this.props.match.params.name;
-        console.log('this.props', this.props.match.params)
 
         const dataQuery = '{person( name:"' + name +'") {name height mass hair_color skin_color birth_year gender homeworld{name}}}'
         return (

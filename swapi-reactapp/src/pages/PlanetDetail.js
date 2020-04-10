@@ -16,7 +16,6 @@ class PlanetDetail extends React.Component {
 
     render() {
         const name = this.props.match.params.name;
-        console.log('this.props', this.props.match.params)
 
         const dataQuery = '{planet( name:"' + name +'") {name population rotation_period orbital_period diameter climate terrain}}'
         return (
