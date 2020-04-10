@@ -6,8 +6,6 @@ import {
 } from "react-router-dom";
 
 import Home from './pages/Home';
-import About from './pages/About';
-import Dashboard from './pages/Dashboard';
 import PlanetList from './pages/PlanetList';
 import PlanetDetail from './pages/PlanetDetail';
 import PeopleList from './pages/PeopleList';
@@ -18,6 +16,7 @@ import StarshipList from './pages/StarshipList';
 import StarshipDetail from './pages/StarshipDetail';
 import VehicleList from './pages/VehicleList';
 import VehicleDetail from './pages/VehicleDetail';
+import FilmList from './pages/FilmList';
 import AppBar from '@material-ui/core/AppBar';
 import CameraIcon from '@material-ui/icons/PhotoCamera';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -67,12 +66,6 @@ export default function AppRouter() {
                     <Route exact path="/">
                         <Home />
                     </Route>
-                    <Route path="/about">
-                        <About />
-                    </Route>
-                    <Route path="/dashboard">
-                        <Dashboard />
-                    </Route>
                     <Route exact path="/planets">
                         <PlanetList />
                     </Route>
@@ -93,7 +86,9 @@ export default function AppRouter() {
                         <VehicleList />
                     </Route>
                     <Route exact path="/vehicles/:name" component={VehicleDetail} />
-
+                    <Route exact path="/films">
+                        <FilmList />
+                    </Route>
                 </Switch>
             </main>
         </Router>
