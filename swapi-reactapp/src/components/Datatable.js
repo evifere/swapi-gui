@@ -18,7 +18,7 @@ const useStyles = theme => ({
     }, table: {
         minWidth: 900,
     },
-    title:{
+    title: {
         "text-align": "center"
     }
 });
@@ -109,14 +109,15 @@ class Datatable extends React.Component {
                             <TableBody>
                                 {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
                                     <TableRow key={row.name}>
-                                        <TableCell component="th" scope="row">
-                                            {row.name}
-                                        </TableCell>
-                                        <TableCell align="right">{row.name}</TableCell>
-                                        <TableCell align="right">{row.rotation_period}</TableCell>
-                                        <TableCell align="right">{row.orbital_period}</TableCell>
-                                        <TableCell align="right">{row.climate}</TableCell>
-                                        <TableCell align="right">{row.terrain}</TableCell>
+                                        {this.props.headers.map((column) => {
+                                            const value = row[column.id];
+                                            return (
+                                                <TableCell key={column.id} align={column.align || "center"}>
+                                                    {column.format && typeof value === 'number' ? column.format(value) : value}
+                                                </TableCell>
+                                            );
+                                        })}
+
                                     </TableRow>
                                 ))}
                             </TableBody>
