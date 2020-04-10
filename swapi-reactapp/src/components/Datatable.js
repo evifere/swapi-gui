@@ -16,8 +16,11 @@ const useStyles = theme => ({
     root: {
         width: '100%',
     }, table: {
-        minWidth: 650,
+        minWidth: 900,
     },
+    title:{
+        "text-align": "center"
+    }
 });
 
 class Datatable extends React.Component {
@@ -26,8 +29,8 @@ class Datatable extends React.Component {
         rows: [],
         page: 0,
         rowsPerPage: 10,
-        errored:false,
-        loading:false
+        errored: false,
+        loading: false
     }
 
 
@@ -38,7 +41,7 @@ class Datatable extends React.Component {
         this.handleChangePage = this.handleChangePage.bind(this);
         this.handleChangeRowsPerPage = this.handleChangeRowsPerPage.bind(this);
 
-        console.log('props',props)
+        console.log('props', props)
     }
 
     handleChangePage = (event, newPage) => {
@@ -59,44 +62,48 @@ class Datatable extends React.Component {
     }
 
     componentDidMount() {
-        this.setState({loading:true,errored:false});
+        this.setState({ loading: true, errored: false });
 
         axios
             .post("http://localhost:8080/", {
-                query:this.props.dataQuery
+                query: this.props.dataQuery
             })
             .then(response => {
                 const rows = response.data.data[this.props.dataKey];
                 this.setState({ rows });
-        
+
             })
             .catch(error => {
                 console.log(error);
-                this.setState({errored:true});
-        
+                this.setState({ errored: true });
+
             })
-            .finally(() => (this.setState({loading:false})));
+            .finally(() => (this.setState({ loading: false })));
     }
 
     render() {
         const { classes } = this.props;
         const rows = this.state.rows;
         const { page, rowsPerPage } = this.state;
+
         return (
             <Container maxWidth="md">
-                 <Link to="/">Home</Link>
-                <h1>Planets</h1>
+                <Link to="/">Home</Link>
+                <h1 className={classes.title}>{this.props.title}</h1>
                 <Paper className={classes.root}>
                     <TableContainer component={Paper}>
                         <Table className={classes.table} size="small" aria-label="a dense table">
                             <TableHead>
                                 <TableRow>
-                                    <TableCell>Name</TableCell>
-                                    <TableCell align="right">Rotation period</TableCell>
-                                    <TableCell align="right">Orbital period</TableCell>
-                                    <TableCell align="right">Diameter</TableCell>
-                                    <TableCell align="right">Climate</TableCell>
-                                    <TableCell align="right">Terrain</TableCell>
+                                    {this.props.headers.map((column) => (
+                                        <TableCell
+                                            key={column.id}
+                                            align={column.align || "center"}
+                                            style={{ minWidth: (column.minWidth || "175px") }}
+                                        >
+                                            {column.label}
+                                        </TableCell>
+                                    ))}
                                 </TableRow>
                             </TableHead>
                             <TableBody>
