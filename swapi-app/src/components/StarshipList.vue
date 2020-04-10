@@ -30,7 +30,6 @@ export default {
         value: "name"
       },
       { text: "Model", value: "model" },
-      { text: "Designation", value: "designation" },
       { text: "Manufacturer", value: "manufacturer" },
       { text: "Cost In credits", value: "cost_in_credits" },
       { text: "Length", value: "length" },
