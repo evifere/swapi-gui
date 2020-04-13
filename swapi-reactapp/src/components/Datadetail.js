@@ -95,7 +95,14 @@ class Datadetail extends React.Component {
                                         const externalLinksArray = data[field.id];
 
                                         if (!(void 0 === externalLinksArray[0])) {//subfield is an array
-                                            return (<TableRow align="center" style={{ minWidth: "175px" }} key={field.id}>{field.label} : <Link to={field.to + '/' + externalLinksArray[0][field.link_id]}>{externalLinksArray[0][field.child_id]}</Link></TableRow>)
+                                            return (<TableRow align="center" style={{ minWidth: "175px" }} key={field.id}>{field.label} :
+                                                {
+                                                    externalLinksArray.map((subfield) => {
+                                                        return <Link to={field.to + '/' + subfield[field.link_id]}>{subfield[field.child_id]}<br /></Link>
+
+                                                    })
+                                                }
+                                            </TableRow>)
                                         }
 
                                         return null;
