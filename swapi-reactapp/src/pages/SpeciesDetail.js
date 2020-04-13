@@ -10,7 +10,9 @@ const headers = [
     { label: "Designation", id: "designation" },
     { label: "Average height", id: "average_height" },
     { label: "Skin colors", id: "skin_colors" },
-    { label: "Hair colors", id: "hair_colors" }
+    { label: "Hair colors", id: "hair_colors" },
+    { label: "Home world", id: "homeworld", "child_id": "name", "to": "/planets" }
+
 
 ];
 
