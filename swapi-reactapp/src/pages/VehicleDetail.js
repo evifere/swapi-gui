@@ -8,7 +8,8 @@ const headers = [
     { label: "Cost In credits", id: "cost_in_credits" },
     { label: "Length", id: "length" },
     { label: "Max atmosphering speed", id: "max_atmosphering_speed" },
-    { label: "Crew", id: "crew" }
+    { label: "Crew", id: "crew" },
+    { label: "Films", id: "films", "child_id": "title", "to": "/films","link_id":"episode_id" }
 ];
 
 class VehicleDetail extends React.Component {
