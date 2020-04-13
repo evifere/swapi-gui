@@ -70,7 +70,7 @@ class Datadetail extends React.Component {
                 <IconButton> <Link to="/"><HomeBtn /></Link></IconButton>
                 {this.props.titleImg}
                 <h1 className={classes.title}>{this.props.title}</h1>
-                
+
                 <Paper className={classes.root}>
                     <TableContainer component={Paper}>
                         <Table className={classes.table} size="small" aria-label="a dense table">
@@ -80,9 +80,19 @@ class Datadetail extends React.Component {
                                 </TableRow>
                             </TableHead>
                             <TableBody>{
-                                    headers.map((field) => {
-                                        return (<TableRow align="center" style={{ minWidth: "175px" }} key={field.id}>{field.label} : {data[field.id]}</TableRow>)
-                                    })}
+                                headers.map((field) => {
+                                    if (void 0 === data[field.id]) {
+                                        return null;
+                                    }
+
+                                    if (field.child_id) {
+                                        const externalLinksField = data[field.id][field.child_id];
+
+                                        return (<TableRow align="center" style={{ minWidth: "175px" }} key={field.id}>{field.label} : <Link to={field.to + '/' + externalLinksField}>{externalLinksField}</Link></TableRow>)
+                                    }
+
+                                    return (<TableRow align="center" style={{ minWidth: "175px" }} key={field.id}>{field.label} : {data[field.id]}</TableRow>)
+                                })}
                             </TableBody>
                         </Table>
                     </TableContainer>
