@@ -20,11 +20,12 @@ class StarshipDetail extends React.Component {
         const name = this.props.match.params.name;
 
         const dataQuery = '{starship( name:"' + name + '") {name model manufacturer cost_in_credits length max_atmosphering_speed crew cargo_capacity consumables hyperdrive_rating MGLT starship_class films {title episode_id} pilots{name}}}'
+        const titleImg = (<img style={{ float: "right" }} src="/assets/starship-128.png" alt="logo" />)
 
         return (
             <div>
 
-                <Datadetail title="Starship detail" dataKey="starship" dataQuery={dataQuery} headers={headers} />
+                <Datadetail titleImg={titleImg} title="Starship detail" dataKey="starship" dataQuery={dataQuery} headers={headers} />
 
             </div>
         );
