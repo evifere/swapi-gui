@@ -17,7 +17,7 @@ class PeopleDetail extends React.Component {
     render() {
         const name = this.props.match.params.name;
         const dataQuery = '{person( name:"' + name + '") {name height mass hair_color skin_color birth_year gender homeworld{name}}}'
-        const titleImg = (<img style={{ float: "right" }} src={logo} alt="logo" />)
+        const titleImg = (<img style={{ float: "right",maxWidth:128 }} src={logo} alt="logo" />)
 
         return (
             <div>

@@ -18,13 +18,13 @@ class VehicleDetail extends React.Component {
 
     render() {
         const name = this.props.match.params.name;
-
         const dataQuery = '{vehicle( name:"' + name + '") {name model manufacturer cost_in_credits length max_atmosphering_speed crew cargo_capacity consumables vehicle_class films {title episode_id} pilots{name}}}'
+        const titleImg = (<img style={{ float: "right",maxWidth:128 }} src="/assets/vehicle-128.png" alt="logo" />)
 
         return (
             <div>
 
-                <Datadetail title="Vehicle detail" dataKey="vehicle" dataQuery={dataQuery} headers={headers} />
+                <Datadetail titleImg={titleImg} title="Vehicle detail" dataKey="vehicle" dataQuery={dataQuery} headers={headers} />
 
             </div>
         );

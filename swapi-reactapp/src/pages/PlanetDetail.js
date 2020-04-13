@@ -17,7 +17,7 @@ class PlanetDetail extends React.Component {
     render() {
         const name = this.props.match.params.name;
         const dataQuery = '{planet( name:"' + name +'") {name population rotation_period orbital_period diameter climate terrain}}'
-        const titleImg = (<img style={{ float: "right" }} src="/assets/planet-96.png" alt="logo" />)
+        const titleImg = (<img style={{ float: "right",maxWidth:128 }} src="/assets/planet-96.png" alt="logo" />)
 
         return (
             <div>
