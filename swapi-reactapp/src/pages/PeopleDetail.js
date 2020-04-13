@@ -1,5 +1,6 @@
 import React from "react";
 import Datadetail from '../components/Datadetail';
+import logo from '../logo.svg';
 
 const headers = [ { label: "Name", id: "name" },
 { label: "Height", id: "height" },
@@ -15,12 +16,13 @@ class PeopleDetail extends React.Component {
 
     render() {
         const name = this.props.match.params.name;
-
         const dataQuery = '{person( name:"' + name +'") {name height mass hair_color skin_color birth_year gender homeworld{name}}}'
+        const titleImg = (<img style={{float:"right"}} src={logo} alt="logo" />)
+
         return (
             <div>
  
-                <Datadetail title="People detail" dataKey="person" dataQuery={dataQuery} headers={headers} />
+                <Datadetail titleImg={titleImg} title="People detail" dataKey="person" dataQuery={dataQuery} headers={headers} />
 
             </div>
         );

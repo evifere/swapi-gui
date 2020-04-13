@@ -68,7 +68,9 @@ class Datadetail extends React.Component {
         return (
             <Container maxWidth="md">
                 <IconButton> <Link to="/"><HomeBtn /></Link></IconButton>
+                {this.props.titleImg}
                 <h1 className={classes.title}>{this.props.title}</h1>
+                
                 <Paper className={classes.root}>
                     <TableContainer component={Paper}>
                         <Table className={classes.table} size="small" aria-label="a dense table">
