@@ -20,13 +20,13 @@ class SpeciesDetail extends React.Component {
 
     render() {
         const name = this.props.match.params.name;
-
         const dataQuery = '{specie( name:"' + name + '") {name classification designation average_height skin_colors hair_colors eye_colors average_lifespan language homeworld{name}}}'
+        const titleImg = (<img style={{ float: "right" }} src="/assets/species-128.png" alt="logo" />)
 
         return (
             <div>
 
-                <Datadetail title="Species detail" dataKey="specie" dataQuery={dataQuery} headers={headers} />
+                <Datadetail  titleImg={titleImg} title="Species detail" dataKey="specie" dataQuery={dataQuery} headers={headers} />
 
             </div>
         );
