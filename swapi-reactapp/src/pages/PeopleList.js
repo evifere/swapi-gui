@@ -1,5 +1,6 @@
 import React from "react";
 import Datatable from '../components/Datatable';
+import logo from '../logo.svg';
 
 
 const headers = [
@@ -13,13 +14,15 @@ const headers = [
 
 const dataQuery = "{people(skip:10 first:0) {name height mass hair_color skin_color birth_year gender}}";
 
+const titleImg = (<img style={{ float: "right",maxWidth:128 }} src={logo} alt="logo" />)
+
 class PeopleList extends React.Component {
 
 
     render() {
 
         return (
-            <Datatable title="People" dataKey="people" dataQuery={dataQuery} headers={headers} />
+            <Datatable titleImg={titleImg} title="People" dataKey="people" dataQuery={dataQuery} headers={headers} />
         )
     }
 }
