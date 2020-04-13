@@ -18,7 +18,7 @@ const useStyles = theme => ({
     root: {
         width: '100%',
     }, table: {
-        minWidth: 900,
+        minWidth: 300,
     },
     title: {
         "text-align": "center"
