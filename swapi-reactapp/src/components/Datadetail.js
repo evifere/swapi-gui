@@ -89,26 +89,35 @@ class Datadetail extends React.Component {
                                         const externalLinksField = data[field.id][field.child_id];
 
                                         if (!(void 0 === externalLinksField)) {//subfield is a string
-                                            return (<TableRow align="center" style={{ minWidth: "175px" }} key={field.id}>{field.label} : <Link to={field.to + '/' + externalLinksField}>{externalLinksField}</Link></TableRow>)
+                                            return (<TableRow style={{ minWidth: "175px" }} key={field.id}>
+                                                 <TableCell  align="center" style={{ marginTop: "5em" }} key={field.id}>
+                                                     {field.label} : <Link to={field.to + '/' + externalLinksField}>{externalLinksField}</Link>
+                                                 </TableCell>
+                                            </TableRow>)
                                         }
 
                                         const externalLinksArray = data[field.id];
 
                                         if (!(void 0 === externalLinksArray[0])) {//subfield is an array
-                                            return (<TableRow align="center" style={{ minWidth: "175px" }} key={field.id}>{field.label} :
-                                                {
-                                                    externalLinksArray.map((subfield) => {
-                                                        return <Link to={field.to + '/' + subfield[field.link_id]}>{subfield[field.child_id]}<br /></Link>
+                                            return (<TableRow  style={{ minWidth: "175px" }} key={field.id}>
+                                                <TableCell align="center" style={{ marginTop: "5em" }} key={field.id}>{field.label} : <br />
+                                                    {
+                                                        externalLinksArray.map((subfield) => {
+                                                            return <Link to={field.to + '/' + subfield[field.link_id]}>{subfield[field.child_id]}<br /></Link>
 
-                                                    })
-                                                }
+                                                        })
+                                                    }
+                                                </TableCell>
                                             </TableRow>)
                                         }
 
                                         return null;
                                     }
 
-                                    return (<TableRow align="center" style={{ minWidth: "175px" }} key={field.id}>{field.label} : {data[field.id]}</TableRow>)
+                                    return (<TableRow  style={{ minWidth: "175px" }} key={field.id}>
+                                            <TableCell align="center" style={{ marginTop: "5em" }} key={field.id}>{field.label} : {data[field.id]}
+                                            </TableCell>
+                                        </TableRow>)
                                 })}
                             </TableBody>
                         </Table>
