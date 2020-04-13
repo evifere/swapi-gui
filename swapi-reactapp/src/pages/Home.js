@@ -1,5 +1,5 @@
 import React from "react";
-import ButtonBase from "../components/ButtonBase"
+import ButtonBaseList from "../components/ButtonBaseList"
 
 const images = [
     {
@@ -45,7 +45,7 @@ class Home extends React.Component {
     render() {
         return (
             <div>
-                <ButtonBase images={images} />
+                <ButtonBaseList images={images} />
             </div>
         );
     }

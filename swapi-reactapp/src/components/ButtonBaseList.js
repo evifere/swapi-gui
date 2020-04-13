@@ -80,7 +80,7 @@ const useStyles = ((theme) => ({
   },
 }));
 
-class ButtonBases extends React.Component {
+class ButtonBaseList extends React.Component {
 
 
   render() {
@@ -125,4 +125,4 @@ class ButtonBases extends React.Component {
   }
 }
 
-export default withStyles(useStyles)(ButtonBases);
+export default withStyles(useStyles)(ButtonBaseList);
