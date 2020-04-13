@@ -17,9 +17,14 @@ swapi gui vuejs vuex
 docker-compose up -d
 
 
-#start frontend server
+#start frontend server for vuejs app
 cd swapi-app
 npm install
 npm run serve
+
+#or start frontend server for react js app
+cd swapi-reactapp
+npm install
+npm start
 
 ```
