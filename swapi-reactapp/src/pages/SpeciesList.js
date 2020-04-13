@@ -12,6 +12,7 @@ const headers = [
 ];
 
 const dataQuery = "{species {name classification designation average_height skin_colors hair_colors}}";
+const titleImg = (<img style={{ float: "right",maxWidth:128 }} src="/assets/species-128.png" alt="logo" />)
 
 class SpeciesList extends React.Component {
 
@@ -19,7 +20,7 @@ class SpeciesList extends React.Component {
     render() {
 
         return (
-            <Datatable title="Species" dataKey="species" dataQuery={dataQuery} headers={headers} />
+            <Datatable titleImg={titleImg} title="Species" dataKey="species" dataQuery={dataQuery} headers={headers} />
         )
     }
 }

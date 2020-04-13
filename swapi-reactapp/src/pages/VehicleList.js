@@ -13,6 +13,7 @@ const headers = [
 ];
 
 const dataQuery = "{vehicles {name model manufacturer cost_in_credits length max_atmosphering_speed crew}}";
+const titleImg = (<img style={{ float: "right",maxWidth:128 }} src="/assets/vehicle-128.png" alt="logo" />)
 
 class VehicleList extends React.Component {
 
@@ -20,7 +21,7 @@ class VehicleList extends React.Component {
     render() {
 
         return (
-            <Datatable title="Vehicles" dataKey="vehicles" dataQuery={dataQuery} headers={headers} />
+            <Datatable titleImg={titleImg} title="Vehicles" dataKey="vehicles" dataQuery={dataQuery} headers={headers} />
         )
     }
 }
