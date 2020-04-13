@@ -81,14 +81,24 @@ class Datadetail extends React.Component {
                             </TableHead>
                             <TableBody>{
                                 headers.map((field) => {
-                                    if (void 0 === data[field.id]) {
+                                    if (void 0 === data[field.id]) {//no data yet
                                         return null;
                                     }
 
-                                    if (field.child_id) {
+                                    if (field.child_id) {//subfield
                                         const externalLinksField = data[field.id][field.child_id];
 
-                                        return (<TableRow align="center" style={{ minWidth: "175px" }} key={field.id}>{field.label} : <Link to={field.to + '/' + externalLinksField}>{externalLinksField}</Link></TableRow>)
+                                        if (!(void 0 === externalLinksField)) {//subfield is a string
+                                            return (<TableRow align="center" style={{ minWidth: "175px" }} key={field.id}>{field.label} : <Link to={field.to + '/' + externalLinksField}>{externalLinksField}</Link></TableRow>)
+                                        }
+
+                                        const externalLinksArray = data[field.id];
+
+                                        if (!(void 0 === externalLinksArray[0])) {//subfield is an array
+                                            return (<TableRow align="center" style={{ minWidth: "175px" }} key={field.id}>{field.label} : <Link to={field.to + '/' + externalLinksArray[0][field.link_id]}>{externalLinksArray[0][field.child_id]}</Link></TableRow>)
+                                        }
+
+                                        return null;
                                     }
 
                                     return (<TableRow align="center" style={{ minWidth: "175px" }} key={field.id}>{field.label} : {data[field.id]}</TableRow>)
