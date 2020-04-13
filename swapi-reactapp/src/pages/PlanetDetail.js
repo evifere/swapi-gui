@@ -16,12 +16,13 @@ class PlanetDetail extends React.Component {
 
     render() {
         const name = this.props.match.params.name;
-
         const dataQuery = '{planet( name:"' + name +'") {name population rotation_period orbital_period diameter climate terrain}}'
+        const titleImg = (<img style={{ float: "right" }} src="/assets/planet-96.png" alt="logo" />)
+
         return (
             <div>
  
-                <Datadetail title="Planet detail" dataKey="planet" dataQuery={dataQuery} headers={headers} />
+                <Datadetail titleImg={titleImg} title="Planet detail" dataKey="planet" dataQuery={dataQuery} headers={headers} />
 
             </div>
         );
