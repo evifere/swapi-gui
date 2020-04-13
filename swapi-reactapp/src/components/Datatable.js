@@ -93,6 +93,7 @@ class Datatable extends React.Component {
         return (
             <Container maxWidth="xl">
                 <IconButton> <Link to="/"><HomeBtn /></Link></IconButton>
+                {this.props.titleImg}
                 <h1 className={classes.title}>{this.props.title}</h1>
                 <Paper className={classes.root}>
                     <TableContainer component={Paper}>

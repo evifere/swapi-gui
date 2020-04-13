@@ -12,15 +12,17 @@ const headers = [
 
 const dataQuery = "{films {episode_id title opening_crawl director producer release_date}}";
 
-class VehicleList extends React.Component {
+const titleImg = (<img style={{ float: "right",maxWidth:128 }} src="/assets/film-128.png" alt="logo" />)
+
+class FilmList extends React.Component {
 
 
     render() {
 
         return (
-            <Datatable title="Films" dataKey="films" dataQuery={dataQuery} headers={headers} />
+            <Datatable titleImg={titleImg} title="Films" dataKey="films" dataQuery={dataQuery} headers={headers} />
         )
     }
 }
 
-export default VehicleList
+export default FilmList
