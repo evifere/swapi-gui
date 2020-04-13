@@ -2,6 +2,7 @@ import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
+import { Link as RouterLink } from 'react-router-dom';
 
 
 
@@ -11,6 +12,7 @@ const useStyles = ((theme) => ({
     flexWrap: 'wrap',
     minWidth: 300,
     width: '100%',
+    'justify-content': 'center'
   },
   image: {
     position: 'relative',
@@ -95,6 +97,8 @@ class ButtonBases extends React.Component {
             style={{
               width: image.width,
             }}
+            component={RouterLink} 
+            to={image.to}
           >
             <span
               className={classes.imageSrc}
