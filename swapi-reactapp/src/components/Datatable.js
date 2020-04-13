@@ -20,7 +20,7 @@ const useStyles = theme => ({
     root: {
         width: '100%',
     }, table: {
-        minWidth: 900,
+        minWidth: 300,
     },
     title: {
         "text-align": "center"
@@ -91,7 +91,7 @@ class Datatable extends React.Component {
         const { page, rowsPerPage } = this.state;
 
         return (
-            <Container maxWidth="md">
+            <Container maxWidth="xl">
                 <IconButton> <Link to="/"><HomeBtn /></Link></IconButton>
                 <h1 className={classes.title}>{this.props.title}</h1>
                 <Paper className={classes.root}>
