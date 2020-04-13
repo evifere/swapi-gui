@@ -41,8 +41,6 @@ const useStyles = makeStyles((theme) => ({
 export default function AppRouter() {
     const classes = useStyles();
 
-    console.log('classes', classes);
-
     return (
         <Router>
             <AppBar position="relative" >
