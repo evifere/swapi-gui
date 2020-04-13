@@ -16,13 +16,15 @@ const headers = [
 
 const dataQuery = "{planets {name rotation_period orbital_period diameter climate terrain}}";
 
+const titleImg = (<img style={{ float: "right",maxWidth:128 }} src="/assets/planet-96.png" alt="logo" />)
+
 class PlanetList extends React.Component {
 
 
     render() {
 
         return (
-            <Datatable title="Planets" dataKey="planets" dataQuery={dataQuery} headers={headers} />
+            <Datatable titleImg={titleImg} title="Planets" dataKey="planets" dataQuery={dataQuery} headers={headers} />
         )
     }
 }
