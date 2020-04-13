@@ -9,7 +9,9 @@ const headers = [
     { label: "Length", id: "length" },
     { label: "Max atmosphering speed", id: "max_atmosphering_speed" },
     { label: "Crew", id: "crew" },
-    { label: "Films", id: "films", "child_id": "title", "to": "/films","link_id":"episode_id" }
+    { label: "Films", id: "films", "child_id": "title", "to": "/films","link_id":"episode_id" },
+    { label: "Pilots", id: "pilots", "child_id": "name", "to": "/people","link_id":"name" }
+
 ];
 
 class VehicleDetail extends React.Component {
