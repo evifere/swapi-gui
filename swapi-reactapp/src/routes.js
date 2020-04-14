@@ -47,7 +47,7 @@ export default function AppRouter() {
                 <Toolbar className={classes.toolbar}>
                     <img src={logo} alt="logo" />
                     <Typography variant="h6" color="inherit" noWrap>
-                        Swapi -app
+                        Swapi -reactapp
                     </Typography>
                 </Toolbar>
 
