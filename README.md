@@ -9,6 +9,10 @@ swapi gui vuejs vuex
 # gif démo mobile 📱
 ![Démo mobile](doc/mobile_demo.gif)
 
+# gif démo react
+![Démo mobile](doc/reactapp_demo.gif)
+
+
 # first installation
 
 
