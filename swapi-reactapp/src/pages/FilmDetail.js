@@ -7,7 +7,10 @@ const headers = [
       { label: "Title", id: "title" },
       { label: "Director", id: "director" },
       { label: "Producer", id: "producer" },
-      { label: "Release date", id: "release_date" }
+      { label: "Release date", id: "release_date" },
+      { label: "Synopsis", id: "opening_crawl" },
+      { label: "Characters", id: "characters", "child_id": "name", "to": "/people","link_id":"name" }
+
 ];
 
 class FilmDetail extends React.Component {
