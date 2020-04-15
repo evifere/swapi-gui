@@ -15,6 +15,7 @@ services:
     volumes:
       - mongodb_data_container:/data/db
       - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+      - ../src/data:/dockerseed:ro
     networks:
       swnetwork:
         aliases:
