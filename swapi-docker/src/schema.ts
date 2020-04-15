@@ -11,6 +11,8 @@ export async function buildAppSchema() {
       VehiclesResolver,
       StarshipsResolver,
       SpeciesResolver,
-    ]
+    ],
+    emitSchemaFile: true,
+    validate: false,
   });
 }
