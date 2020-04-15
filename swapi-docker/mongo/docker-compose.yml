@@ -1,0 +1,26 @@
+version: "3.3"
+services:
+  mongodb_container:
+    image: swapidb
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sw-mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword
+      MONGO_INITDB_DATABASE: swapidb
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_data_container:/data/db
+      - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+    networks:
+      swnetwork:
+        aliases:
+          - sw.db.local
+volumes:
+  mongodb_data_container:
+networks:
+  swnetwork:
+    external: true

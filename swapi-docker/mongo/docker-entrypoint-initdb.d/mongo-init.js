@@ -1,0 +1,1 @@
+db.createUser({user: "swapi",pwd: "swapipwd",roles: [{role: "readWrite",db: "swapidb"}]});
