@@ -15,11 +15,13 @@ process.on("SIGINT", () => {
 
 const main = async () => {
   const schema = await buildAppSchema();
-
   // create mongoose connection
- // const mongoose = await connect('mongodb://swapiapp:swapipwd@e1f0addaa1e3:27017/swapidb', {useNewUrlParser: true});
-  //await mongoose.connection;
+  const mongoose = await connect('mongodb://swapi:swapipwd@sw.db.local:27017/swapidb', {useNewUrlParser: true, useUnifiedTopology: true });
   
+  console.log('await mongoose connection')
+  await mongoose.connection;
+  
+  console.log('db connection done')
 
   const server = new ApolloServer({ schema });
   const app = Express();
