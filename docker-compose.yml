@@ -16,4 +16,4 @@ services:
           - sw.api.local
 networks:
   swnetwork:
-
+    external: true
