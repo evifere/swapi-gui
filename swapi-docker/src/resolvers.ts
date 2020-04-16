@@ -1,11 +1,19 @@
 import { Resolver, Query, Arg } from "type-graphql";
-import { people, planets, films, vehicles, starships, species } from './records';
+import { people, planets, /*films,*/ vehicles, starships, species } from './records';
 import { Person } from "./types/Person";
 import { Planet } from "./types/Planet";
-import { Film } from "./types/Film";
+import { Film,FilmsModel } from "./types/Film";
 import { Vehicle } from "./types/Vehicle";
 import { Starship } from "./types/Starship";
 import { Species } from "./types/Species";
+
+// https://github.com/graphql/graphql-js/issues/1989
+// clone response to avoid graphql error
+// Cannot return null for non-nullable field Film.title or any other field
+function f_clone_response(res)
+{
+  return JSON.parse(JSON.stringify(res));
+}
 
 @Resolver()
 export class PersonResolver {
@@ -49,20 +57,22 @@ export class PlanetResolver {
   }
 }
 
-@Resolver()
+@Resolver(_of => Film)
 export class FilmResolver {
   @Query(returns => [Film])
-  public films() {
-    return films;
+  public async films() {
+    console.log('FilmsModel.find')
+    return f_clone_response(await FilmsModel.find());
   }
 
-  @Query(returns => Film, { nullable: true })
-  public film(
+  @Query(returns => Film, { nullable: false })
+  async film(
     @Arg("episode_id")
     episode_id: number
   ) {
     console.log('endpoint film f episode_id ', episode_id);
-    return films.find(f => f.episode_id === episode_id);
+
+    return f_clone_response(await FilmsModel.findOne({episode_id:episode_id}));
   }
 
 }

@@ -1,4 +1,5 @@
-import { Field, ObjectType, Int } from "type-graphql";
+import { Field, ObjectType, Int, ID } from "type-graphql";
+import { prop as Property, getModelForClass } from "@typegoose/typegoose";
 import { people, planets, vehicles, starships, species } from "../records";
 import { Person } from "./Person";
 import { Planet } from "./Planet";
@@ -8,6 +9,9 @@ import { Species } from "./Species";
 
 @ObjectType()
 export class Film {
+  @Field(()=> ID)
+  id: string;
+  
   @Field()
   url: string;
 
@@ -64,3 +68,5 @@ export class Film {
     return species.filter(s => this.species.includes(s.url));
   }
 }
+
+export const FilmsModel = getModelForClass(Film);
